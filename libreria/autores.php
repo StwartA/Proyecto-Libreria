@@ -7,7 +7,7 @@ $query = $pdo->query("SELECT nombre, pais FROM autores");
 $autores = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<h2>Listado de Autores</h2>
+<h1 class="titulo">Listado de Autores</h1>
 
 <ul>
 <?php foreach ($autores as $autor): ?>

@@ -14,17 +14,15 @@ if (session_status() == PHP_SESSION_NONE) {
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="index.php">Librería</a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.php">Libros</a></li>
-                <li class="nav-item"><a class="nav-link" href="autores.php">Autores</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
-            </ul>
-        </div>
+<nav class="navbar">
+    <a href="index.php" class="navbar-brand">Trawts Librery</a>
+    <div class="navbar-links">
+        <a href="index.php">Inicio</a>
+        <a href="autores.php">Autores</a>
+        <a href="contacto.php">Contacto</a>
     </div>
+    <button class="navbar-button">Menú</button>
 </nav>
+
 
 <div class="container mt-4">

@@ -13,6 +13,15 @@
 -- 
 -- Estructura de tabla para la tabla `autores`
 -- 
+CREATE TABLE contacto (
+    id_contacto INT NOT NULL AUTO_INCREMENT,
+    fecha DATETIME NOT NULL,
+    correo VARCHAR(100) NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
+    asunto VARCHAR(100) NOT NULL,
+    comentario TEXT NOT NULL,
+    PRIMARY KEY (id_contacto)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `autores` (
   `id_autor` varchar(11) NOT NULL,

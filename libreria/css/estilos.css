@@ -1,67 +1,185 @@
+/* Fuente moderna desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* ===== BODY ===== */
 body {
-    background-color: #f5f5f5;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+
 }
 
-h2 {
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #333;
-}
-
-.table {
-    background: white;
-}
-
-footer {
-    margin-top: 40px;
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #1a1a1a, #222222, #1a1a1a); /* header más oscuro */
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px px rgba(0,0,0,0.5);
 }
 
 .navbar-brand {
-    font-weight: bold;
-    font-size: 22px;
+    font-weight: 700;
+    font-size: 24px;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-decoration: none;
 }
 
-form {
-    background: white;
-    padding: 25px;
+.navbar-brand:hover {
+    color: #66b2ff; /* azul suave igual que los links */
+    transition: color 0.2s, transform 0.2s;
+    transform: scale(1.05); /* opcional: pequeño efecto de zoom */
+}
+
+.navbar-links a {
+    color: #f0f0f0;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.navbar-links a:hover {
+    color: #66b2ff; /* azul suave */
+    transform: scale(1.05);
+}
+
+.navbar-button {
+    display: none; /* se muestra solo en móvil */
+    background: #ffffff22;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.navbar-button:hover {
+    background: #ffffff44;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .navbar-links a {
+        margin: 8px 0;
+    }
+    .navbar-button {
+        display: block;
+        margin-top: 10px;
+    }
+}
+
+/* ===== TITULOS ===== */
+h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* ===== TABLAS ===== */
+.table {
+    background: #1e1e1e;
+    color: #e0e0e0;
     border-radius: 8px;
-    box-shadow: 0px 0px 5px rgba(0,0,0,0.15);
+    padding: 10px;
 }
 
-/* Contenedor de todas las tarjetas */
+/* ===== FOOTER ===== */
+footer {
+    margin-top: 40px;
+    color: #aaa;
+    text-align: center;
+}
+
+/* ===== FORMULARIOS ===== */
+form {
+    background: #1f1f1f;
+    color: #e0e0e0;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+}
+
+form input,
+form textarea {
+    width: 100%;
+    background: #2a2a2a;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    transition: border-color 0.2s;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #66b2ff;
+}
+
+form button {
+    background: #66b2ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+form button:hover {
+    background: #3399ff;
+}
+
+/* ===== CONTENEDOR DE TARJETAS ===== */
 .contenedor-libros {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(4, 1fr); /* siempre 4 columnas */
     gap: 20px;
     padding: 20px;
 }
 
-/* Cada tarjeta de libro */
+
+/* ===== CADA TARJETA ===== */
 .card-libro {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    transition: transform 0.2s, box-shadow 0.2s;
+    background: #557ea7; /* gris oscuro medio */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: none; /* quitar sombra */
+    transition: transform 0.2s; /* solo efecto de movimiento al hover */
 }
 
-/* Efecto hover */
 .card-libro:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    box-shadow: none; /* quitar sombra del hover también */
 }
 
-/* Título del libro */
+
 .card-libro h3 {
     margin-top: 0;
     margin-bottom: 10px;
-    color: #222;
+    color: #f0f0f0; /* blanco suave */
 }
 
-/* Información adicional */
 .card-libro p {
     margin: 5px 0;
-    color: #555;
+    color: #d0d0d0; /* gris claro */
     font-size: 14px;
 }
